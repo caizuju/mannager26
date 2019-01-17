@@ -11,6 +11,9 @@ import './assets/bese.css';
 import VueAxios from './lib/vue-axios';
 //引入自己抽取的路由组件
 import router from './lib/vue-router';
+//导入自己的全局面包屑导航
+import myBreadcrumb from './components/myBreadcrumb.vue';
+Vue.component('myBreadcrumb', myBreadcrumb)
 //使用插件
 Vue.use(VueAxios);
 //使用饿了么UI

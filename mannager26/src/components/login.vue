@@ -59,14 +59,13 @@ export default {
           //这里是点击登录按钮验证成功之后执行的逻辑
           // alert('submit!');
           this.$axios.post("login", this.formData).then(res => {
-            console.log(res);
-            // console.log(this.formData);
+           
             //如果status等于400的话,说明用户名或者密码错误
 
             if (res.data.meta.status === 400) {
-              this.$message.error(res.data.meta.msg);
+              // this.$message.error(res.data.meta.msg);
             } else if (res.data.meta.status === 200) {
-              this.$message.success(res.data.meta.msg)
+              // this.$message.success(res.data.meta.msg)
               //如果登录成功的话就跳转到主页并把token保存到本地
                this.$router.push('/')
                 window.sessionStorage.setItem('token',res.data.data.token);
