@@ -114,7 +114,7 @@ export default {
   //在vue实例创建之后请求侧边栏的列表数据然后再页面上循环渲染出来
   created() {
     this.$axios.get('menus').then(res=>{
-      console.log(res);
+      // console.log(res);
       this.menusList = res.data.data;
     })
   },

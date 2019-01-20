@@ -7,6 +7,20 @@ import login from '../components/login.vue';
 import main from '../components/main.vue';
 //引入主页右边主体部分的路由组件
 import users from '../components/users.vue';
+//引入角色列表的路由组件
+import roles from '../components/roles.vue';
+//引入权限列表的路由组件
+import rights from '../components/rights.vue';
+//引入商品列表的路由组件
+import goods from '../components/goods.vue'
+//引入数据图表页面的路由组件
+import reports from '../components/reports.vue';
+//引入分类参数的路由组件
+import params from '../components/params.vue'
+//引入商品分类的路由组件
+import categories from '../components/categories.vue';
+//引入订单列表的路由组件
+import orders from '../components/orders.vue'
 
 //配置路由规则
 let routes = [{
@@ -19,10 +33,47 @@ let routes = [{
         path: '/',
         component: main,
         children: [{
+            //用户列表
             path: 'users',
-            component: users        }]
+            component: users        },
+            //角色列表
+            {
+                path: 'roles',
+                component: roles  
+            },
+            //权限列表
+            {
+                path :'rights',
+                component:rights
+            },
+            //商品列表
+            {
+                path :'goods',
+                component:goods
+            },
+            {
+                path :'params',
+                component:params
+            },
+            //数据图表
+            {
+                path:'reports',
+                component:reports
+            },
+            //商品分类
+            {
+                path:'categories',
+                component:categories
+            },
+                //订单列表
+            {
+                path:'orders',
+                component:orders
+            },
+        
+        ]
     },
-
+    
 ]
 
 let router = new VueRouter({

@@ -13,6 +13,15 @@ import VueAxios from './lib/vue-axios';
 import router from './lib/vue-router';
 //导入自己的全局面包屑导航
 import myBreadcrumb from './components/myBreadcrumb.vue';
+//导入moment 插件
+import moment from 'moment';
+//导入echart插件
+import echarts from 'echarts'
+
+//定义一个全局的过滤器
+Vue.filter('newTime', function (value) {
+    return moment(value).format('YYYY年MM月DD日 HH:mm:ss')
+})
 Vue.component('myBreadcrumb', myBreadcrumb)
 //使用插件
 Vue.use(VueAxios);

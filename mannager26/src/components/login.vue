@@ -62,13 +62,15 @@ export default {
            
             //如果status等于400的话,说明用户名或者密码错误
 
-            if (res.data.meta.status === 400) {
-              // this.$message.error(res.data.meta.msg);
-            } else if (res.data.meta.status === 200) {
-              // this.$message.success(res.data.meta.msg)
+            if (res.data.meta.status === 200) {
+                 // this.$message.success(res.data.meta.msg)
               //如果登录成功的话就跳转到主页并把token保存到本地
+               window.sessionStorage.setItem('token',res.data.data.token);
                this.$router.push('/')
-                window.sessionStorage.setItem('token',res.data.data.token);
+         
+              // this.$message.error(res.data.meta.msg);
+            } else if (res.data.meta.status === 400) {
+           
             }
           });
         } else {
